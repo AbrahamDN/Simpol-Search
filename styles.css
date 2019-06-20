@@ -26,6 +26,7 @@ html, body{
 
 label, input{
   height: 55px;
+  width: -webkit-fill-available;
 }
 
 button, input{
@@ -49,6 +50,18 @@ input[type='text']{
 
 input{
   height: calc(55px - 2px);
+}
+
+li{
+  padding: 20px;
+  background-color: #E0E0E0;
+  border-bottom: 1px dashed #9E9E9E;
+  list-style: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
 }
 
 .links_container{
