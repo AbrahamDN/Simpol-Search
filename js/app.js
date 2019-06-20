@@ -7,6 +7,8 @@ const displayWikiData = function(){
 
     if (searchString.length > 0) {
       console.log(searchString);
+      $('html').css('height', 'fit-content');
+      $('body').css('height', 'fit-content');
       $.ajax({
         url: wikiUrl,
         dataType: 'jsonp',
