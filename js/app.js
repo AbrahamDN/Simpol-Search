@@ -13,7 +13,8 @@ const displayWikiData = function(){
         jsonp: 'callback',
         success: function(res){
           res[1].forEach(function(item){
-          $linksElement.append(item);
+            let url = 'https://en.wikipedia.org/wiki/' + item;
+            $linksElement.append('<li><a href="'+url+'">'+ item + '</a></li>');
           });
         }
       });
