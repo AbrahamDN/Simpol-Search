@@ -17,6 +17,9 @@ const displayWikiData = function(){
           res[1].forEach(function(item){
             let url = 'https://en.wikipedia.org/wiki/' + item;
             $linksElement.append('<li><a href="'+url+'">'+ item + '</a></li>');
+            $('button').on('click', function(){
+              $linksElement.has('li').empty();
+            });
           });
         }
       });
