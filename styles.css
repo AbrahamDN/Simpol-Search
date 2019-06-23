@@ -59,6 +59,11 @@ button:hover{
   border-bottom: 1px solid #a9a9a9;
 }
 
+button:focus{
+  background-color: #dc2d2d;
+  border-bottom: none;
+}
+
 button, button:hover, #container{
   transition: border-bottom 200ms;
 }
@@ -98,4 +103,9 @@ a{
 
 .links_container{
   text-align: center;
+}
+
+p{
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.1rem;
 }
