@@ -1,6 +1,5 @@
 const displayWikiData = function(){
 
-  $("button").click(function(){
     const $linksElement = $('#links');
     const searchString = $("#searchString").val();
     const wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+ searchString +'&format=json&callback=wikiCallback';
@@ -21,6 +20,12 @@ const displayWikiData = function(){
               $('button').on('click', function(){
                 $linksElement.has('li').empty();
               });
+              $('input').keypress(function(e){
+                if (e.which == 13) {
+                  $linksElement.has('li').empty();
+                  e.preventDefault();
+                }
+              });
 
           });
         }
@@ -30,7 +35,15 @@ const displayWikiData = function(){
       return false;
     }
 
-    });
 };
 
-$('#form').submit(displayWikiData());
+$('input').keypress(function(e){
+  if (e.which == 13) {
+    $('#form').submit(displayWikiData());
+    e.preventDefault();
+  }
+});
+
+$('button').click(function(){
+  $('#form').submit(displayWikiData());
+});
